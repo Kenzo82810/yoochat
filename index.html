@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YooChat - Discute avec tes amis</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header><h1>YooChat BETA V.2 <small>by Kenzo</small></h1></header>
+
+    <main>
+      <section id="auth">
+        <input id="username" placeholder="Pseudo" />
+        <input id="password" placeholder="Mot de passe" type="password" />
+        <div class="auth-actions">
+          <button id="btnRegister">S'inscrire</button>
+          <button id="btnLogin">Se connecter</button>
+        </div>
+        <div id="authMsg"></div>
+      </section>
+
+      <section id="chat" style="display:none">
+        <aside id="left">
+          <div id="profile">Connecté : <span id="me"></span></div>
+          <div class="tabs">
+            <button id="tabPublic" class="active">Public</button>
+            <button id="tabPrivate">Privé</button>
+          </div>
+          <div id="contactsArea">
+            <input id="search" placeholder="Rechercher..." />
+            <ul id="usersList"></ul>
+          </div>
+        </aside>
+
+        <section id="right">
+          <div id="chatHeader">Public chat</div>
+
+          <div id="publicWindow" class="chatWindow">
+            <div id="messagesPublic" class="messages"></div>
+            <div class="composer">
+              <input id="msgPublic" placeholder="Message public..." />
+              <button id="sendPublic">Envoyer</button>
+            </div>
+          </div>
+
+          <div id="privateWindow" class="chatWindow" style="display:none">
+            <div id="chatInfo">Choisis un contact à gauche pour ouvrir le chat privé</div>
+            <div id="messagesPrivate" class="messages"></div>
+            <div class="composer">
+              <input id="msgPrivate" placeholder="Message privé..." />
+              <button id="sendPrivate">Envoyer</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Paramètres - YooChat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="settings">
+  <h2>⚙️ Paramètres du compte</h2>
+
+  <div class="settings-box">
+    <h3>Modifier mon pseudo</h3>
+    <input type="text" id="newUsername" placeholder="Nouveau pseudo">
+    <button onclick="updateUsername()">Mettre à jour</button>
+  </div>
+
+  <div class="settings-box">
+    <h3>Changer mon mot de passe</h3>
+    <input type="password" id="newPassword" placeholder="Nouveau mot de passe">
+    <button onclick="updatePassword()">Changer</button>
+  </div>
+
+  <div class="settings-box danger">
+    <h3>❌ Supprimer mon compte</h3>
+    <button onclick="deleteAccount()">Supprimer définitivement</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
